@@ -9,6 +9,8 @@ exports.up = knex => {
         table.string('name').notNullable();
         table.string('cpf');
 
+        table.uuid('token');
+
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.fn.now());
     });

@@ -14,6 +14,13 @@ class ExampleController {
 
     return res.status(201).json(results);
   }
+
+  async get({ headers }, res) {
+
+    const results = await ExampleService.get({ payload: headers.apikey });
+
+    return res.status(200).json(results);
+  }
 }
 
 module.exports = new ExampleController();
